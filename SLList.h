@@ -12,7 +12,7 @@ public:
 
 class SLList {
 private:
-  IntNode *sentinel;
+  IntNode * first;
   int count;
 
 public:
@@ -22,7 +22,7 @@ public:
    */
   SLList() {
     count = 0;
-    sentinel = new IntNode(63, nullptr);
+    first = NULL;
   }
   /**
    * @brief Construct a new SLLIst object
@@ -30,8 +30,6 @@ public:
    * @param x the first element
    */
   SLList(int x) {
-    count = 0;
-    sentinel = new IntNode(63, nullptr);
     addFirst(x);
   }
 
@@ -41,7 +39,7 @@ public:
    */
   void addFirst(int x) {
     count = count + 1;
-    sentinel->next = new IntNode(x, sentinel->next);
+    first = new IntNode(x, first);
   }
 
   /**
@@ -49,7 +47,7 @@ public:
    *
    * @return int& the sentinel element in list
    */
-  int &getFirst() { return sentinel->next->item; }
+  int &getFirst() { return first->item; }
 
   /**
    * @brief Append the list with given item x
@@ -57,14 +55,7 @@ public:
    * @param x the item
    */
   void addLast(int x) {
-    count = count + 1;
-
-    IntNode *p = sentinel;
-    while (p->next != nullptr) {
-      p = p->next;
-    }
-    // p is pointing to the last node
-    p->next = new IntNode(x, nullptr);
+    //Todo by you
   }
 
   int size() { return count; }
