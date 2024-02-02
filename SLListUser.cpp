@@ -7,7 +7,7 @@ int main() {
   aList->addFirst(10);
   aList->addFirst(10);
   aList->addLast(10);
-  aList->removeDuplicates();
+  //aList->removeDuplicates();
   cout << aList->size();
   return 0;
 }
